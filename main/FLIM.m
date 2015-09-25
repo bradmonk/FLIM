@@ -3,40 +3,15 @@ function varargout = FLIM(varargin)
 clc; close all; clear;
 disp('clearing matlab workspace');
 
-
-thisfile = 'FLIManalyzerV9';
-% thisfilepath = '/Users/bradleymonk/Documents/MatLab/myToolbox/LAB/FRET_FLIM/FLIManalyzerV7';
+thisfile = 'FLIM';
 thisfilepath = fileparts(which(thisfile)); % fileparts(which(mfilename))
-disp(['Changing to dir: ' thisfilepath])
-cd(thisfilepath);
 
-
-datadir = '/Users/bradleymonk/Documents/MatLab/myToolbox/LAB/FRET_FLIM/FRETdata/ActinThymosin/';
+datadir = fileparts(which(thisfile));
 disp(['Changing to dir: ' datadir])
 cd(datadir);
 
 global tempfilename
 tempfilename = '';
-
-
-%{
-if(~isdeployed);
-
-cd(fileparts(which(mfilename)));
-% cd ../..
-cd ..
-
-%     if ~exist('datadir','var')
-%         disp('Select the data directory');
-%         datadir = uigetdir(pwd,'Select the data directory');
-%         cd(datadir);
-%     end
-
-datadir = '/Users/bradleymonk/Documents/MatLab/myToolbox/LAB/FRET_FLIM/FRETdata/ActinThymosin/';
-cd(datadir);
-
-end
-%}
 
 %Initialization code. Function creates a datastack variable for storing the
 %files. It then displays the initial menu options - to compile a file or to
